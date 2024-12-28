@@ -120,15 +120,17 @@ def get_pred_label(predictions):
 model = load_a_model("25122024-120825-full-data-efficientnetb3_adam_model.h5")
 
 
-
 # Testing input image.
-input_image = ['11.jpg']
+#input_image = ['11.jpg']
 
-test_data = create_data_batches(input_image, test_data=True)
+def predict_plant_species(input_image):
+  test_data = create_data_batches(input_image, test_data=True)
 
-predictions = model.predict(test_data,verbose =1)
+  predictions = model.predict(test_data,verbose =1)
 
-print(get_pred_label(predictions))
+  return(get_pred_label(predictions))
+
+
 
 
 
