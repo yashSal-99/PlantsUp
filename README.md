@@ -56,6 +56,7 @@ PlantsUp's user interface is built using **KivyMD** and **Kivy**, popular Python
 ---
 
 ## 📸 Demo  
+![PlantsUp ScreenShot](https://github.com/yashSal-99/PlantsUp/blob/main/Screenshot.jpg)  
 ![PlantsUp Demo](https://github.com/yashSal-99/PlantsUp/blob/main/Demo1.mp4)  
 _See PlantsUp in action!_
 
