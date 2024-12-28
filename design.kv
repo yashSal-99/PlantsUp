@@ -1,0 +1,74 @@
+<MainScreen>:
+    orientation: 'vertical'
+    spacing: 20
+    padding: 20
+
+    # Header Section with Custom Styling
+    BoxLayout:
+        size_hint_y: None
+        height: "60dp"
+        canvas.before:
+            Color:
+                rgba: app.theme_cls.primary_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        MDLabel:
+            text: "PlantsUp"
+            halign: "center"
+            font_style: "H3"  # Larger font style for more prominence
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1  # White
+            bold: True
+
+    # Image Display Section with Shadow Effect
+    Image:
+        id: image_display
+        size_hint: 1, 0.6
+        allow_stretch: True
+        keep_ratio: True
+        source: ''
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 0.1  # Light shadow
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [20]  # Rounded corners
+
+    # File Selection Button with Rounded Corners and Gradient Background
+    MDRaisedButton:
+        text: "Select Image"
+        size_hint: 1, None
+        height: "50dp"
+        on_press: root.upload_image()
+        md_bg_color: app.theme_cls.primary_color  # Custom button color
+        radius: [20]  # Rounded corners
+        font_size: "18sp"
+        elevation_normal: 8  # Button shadow for depth
+        padding: "10dp", "10dp"
+
+    # Process Image Button with Stylish Border and Animation on Click
+    MDRaisedButton:
+        text: "Process Image"
+        size_hint: 1, None
+        height: "50dp"
+        on_press: root.process_image()
+        md_bg_color: app.theme_cls.accent_color  # Accent color for variation
+        radius: [20]  # Rounded corners
+        font_size: "18sp"
+        elevation_normal: 8
+        padding: "10dp", "10dp"
+
+    # Result Display Section with Bold and Centered Text
+    MDLabel:
+        id: result_label
+        text: "Result will appear here"
+        size_hint: 1, None
+        height: "40dp"
+        halign: "center"
+        theme_text_color: "Primary"
+        font_style: "H6"  # Smaller font for result text
+        bold: True
+        color: 0, 0, 0, 1  # Black text for better readability
